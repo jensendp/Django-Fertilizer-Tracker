@@ -1,0 +1,13 @@
+<h1>{{fertilizer.name}}</h1>
+<p>Bag Weight: {{fertilizer.bag_weight}} lbs.</p>
+<p>Bag Coverage: {{fertilizer.bag_coverage}} sq ft.</p>
+
+<form action="{% url 'apply' fertilizer.id %}" method="post">
+    {% csrf_token %}
+    <label for="bags">Bags Applied</label>
+    <input type="number" name="bags" id="bags">
+    <label for="date">Date</label>
+    <input type="date" name="date" id="date">
+
+    <input type="submit" value="Apply">
+</form>

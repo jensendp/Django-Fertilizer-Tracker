@@ -1,0 +1,13 @@
+{% if fertilizers %}
+    <ul>
+        {% for fertilizer in fertilizers %}
+            <li>
+                <a href="/fert/fertilizers/{{fertilizer.id}}">
+                    {{fertilizer.name}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No fertilizers are available</p>
+{% endif %}
